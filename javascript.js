@@ -27,7 +27,9 @@ function fillGrid() {
             gridDiv.className = "grid-square"
 
             gridDiv.addEventListener('mouseover', function() {
-                this.style.cssText = "background-color: gray;"
+                let temp = window.getComputedStyle(gridDiv).getPropertyValue("opacity");
+                let opacityVal = parseFloat(temp) + 0.1;
+                this.style.cssText = "background-color: gray; opacity: " + opacityVal + ";" 
             })
 
             gridRow.appendChild(gridDiv);
